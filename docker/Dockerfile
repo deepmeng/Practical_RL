@@ -28,9 +28,8 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted 
                        g++ && \
     ln -s /usr/bin/swig3.0 /usr/bin/swig
 
-RUN pip install --upgrade pip \
-                           scipy \
-                           numpy && \
+RUN pip install --upgrade pip==9.0.3 && \
+    pip install --upgrade numpy scipy && \
     pip install --upgrade sklearn \
                            jupyter \
                            tqdm \
@@ -42,16 +41,15 @@ RUN pip install --upgrade pip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
                            tensorflow \
-                           http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp27-cp27mu-linux_x86_64.whl \
+                           https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp27-cp27mu-linux_x86_64.whl \
                            torchvision \
                            keras     
                            
 RUN pip install --upgrade  gym_pull ppaquette-gym-doom
 
 
-RUN pip3 install --upgrade pip \
-                           scipy \
-                           numpy && \
+RUN pip3 install --upgrade pip==9.0.3 && \
+    pip3 install --upgrade numpy scipy && \
     pip3 install --upgrade sklearn \
                            jupyter \
                            tqdm \
@@ -62,7 +60,7 @@ RUN pip3 install --upgrade pip \
     pip3 install --upgrade https://github.com/Theano/Theano/archive/master.zip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
-                           http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp35-cp35m-linux_x86_64.whl \
+                           https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp35-cp35m-linux_x86_64.whl \
                            torchvision \
                            tensorflow \
                            keras && \                           
